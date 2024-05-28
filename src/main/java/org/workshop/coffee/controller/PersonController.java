@@ -50,9 +50,10 @@ public class PersonController {
         }
 
         boolean isAdd = person.getId() == null;
-
+        final String password = System.getenv("PWD");
         if (isAdd) {
-            person.setPassword("123123");
+            // person.setPassword("123123");
+            person.setPassword(password);
         }
 
         personService.savePerson(person);
